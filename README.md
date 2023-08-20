@@ -5,6 +5,8 @@ Welcome to the documentation for Dispatch Hub! This guide provides developers wi
 # Overview  
 TaskFlow API is a Task Management Application RESTful API. The objectives of this application is to provide users with tools and features that help them efficiently manage their tasks, improve productivity, and stay organized.
 
+The ultimate goal of a task management application is to empower users to manage their tasks effectively, reduce stress, and enhance their overall productivity and organization.
+
 # Tech Stack
 - Language: Python 3.11.3
 - Framework: Django 4.0+
