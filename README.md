@@ -10,7 +10,7 @@ TaskFlow API is a Task Management Application RESTful API. The objectives of thi
 - Framework: Django 4.0+
 - Database: Dbsqlite3
 
-# objectives
+# Objectives
 
 - Task Creation and Organization:
 Allow users to create tasks easily and organize them based on different parameters such as due dates, priority, categories, and projects.
