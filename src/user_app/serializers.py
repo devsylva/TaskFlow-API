@@ -15,6 +15,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         # Add custom claims
         token['email'] = user.email
+        
         return token
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -65,6 +66,7 @@ class ConfirmEmailSerializer(serializers.ModelSerializer):
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(required=True)
     new_password = serializers.CharField(required=True)
+
 
 class ResetPasswordEmailSerializer(serializers.Serializer):
     email = serializers.EmailField(required=True)

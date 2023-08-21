@@ -54,6 +54,9 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
 ]
 
+
+AUTH_USER_MODEL = "user_app.User"
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -131,7 +134,9 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'UPDATE_LAST_LOGIN': True,
-    'SIGNING_KEY': env('SIGNING_KEY')
+    'SIGNING_KEY': env('SIGNING_KEY'),
+    # It will work instead of the default serializer(TokenObtainPairSerializer).
+    "TOKEN_OBTAIN_SERIALIZER": "user_app.serializers.MyTokenObtainPairSerializer",
 }
 
 # Internationalization
@@ -155,3 +160,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'noreply@taskflow'
