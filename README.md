@@ -50,3 +50,38 @@ Prioritize the security and privacy of user data, implementing proper authentica
 - Backup and Sync:
 Implement data backup and synchronization features to prevent data loss and ensure tasks are accessible from multiple devices.
 
+
+# Getting Started
+To run the API locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/devsylva/TaskFlow-API.git`
+
+2. Create a virtual environment inside the project directory: `python -m venv venv`
+
+3. Activate the virtual environment: `source venv/bin/activate`
+
+4. Install dependecies: `pip install -r requirements.txt`
+
+5. Change `.env.templates` in the src/taskflow direct to `.env` and setup your environment variables
+
+6. Setup the database: `python manage.py migrate`
+
+7. Create a superuser account: `python manage.py createsuperuser`
+
+8. Start the development server: `python manage.py runserver`
+
+
+# Running Tests
+Tests are organized into different files within the app's tests directory. Here's how to run them
+
+1. To run all the tests, use the following command:
+
+```
+python manage.py test
+```
+
+2. To run a single test file, use the following command [replacing `<app_nam>` and `<test_file>` with the appropriate values]:
+
+```
+python manage.py test <app_name>.tests.<test_file>
+```
