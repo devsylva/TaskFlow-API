@@ -135,7 +135,6 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'UPDATE_LAST_LOGIN': True,
     'SIGNING_KEY': env('SIGNING_KEY'),
-    # It will work instead of the default serializer(TokenObtainPairSerializer).
     "TOKEN_OBTAIN_SERIALIZER": "user_app.serializers.MyTokenObtainPairSerializer",
 }
 
