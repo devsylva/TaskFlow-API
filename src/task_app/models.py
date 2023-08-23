@@ -41,7 +41,7 @@ class Task(models.Model):
     description = models.TextField()
     priority = models.IntegerField(choices=PRIORITY_CHOICES, default=2)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='To Do') 
-    deadline = models.DateTimeField()
+    deadline = models.DateTimeField(null=True, blank=True)
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL)
     tags = models.ManyToManyField(Tag, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
