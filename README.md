@@ -18,8 +18,8 @@ The ultimate goal of a task management application is to empower users to manage
 
 # Objectives
 
-- Task Creation and Organization:
-Allow users to create tasks easily and organize them based on different parameters such as due dates, priority, categories, and projects.
+- [x] Task Creation and Organization:
+Allow users to create tasks easily and organize them based on different parameters such as due dates, priority, categories, and projects. 
 
 - Task Tracking and Status Updates:
 Enable users to track the progress of their tasks, update task statuses (e.g., to-do, in progress, completed), and get a clear overview of tasks that need attention.

@@ -13,7 +13,7 @@ from django.http import Http404
 
 # Create your views here.
 class TaskView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsTaskOwner, IsAuthenticated]
     """
     list all task or create a new task
     """
@@ -31,6 +31,7 @@ class TaskView(APIView):
 
 
 class TaskDetail(APIView):
+    permission_classes = [IsAuthenticated]
     """
     Retrieve, update or delete a snippet instance.
     """
@@ -63,11 +64,12 @@ class TaskDetail(APIView):
 
 
 class TagView(APIView):
+    permission_classes = [IsAuthenticated]
     """
     list all task or create a new task
     """
     def get(self, request, format=None):
-        tags = Tag.objects.all()
+        tags = Tag.objects.filter(user=request.user)
         serializer = TagSerializer(tags, many=True)
         return Response(serializer.data)
 
@@ -80,6 +82,7 @@ class TagView(APIView):
 
 
 class TagDetail(APIView):
+    permission_classes = [IsAuthenticated]
     """
     Retrieve, update or delete a snippet instance.
     """

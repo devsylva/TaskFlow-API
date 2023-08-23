@@ -166,3 +166,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'noreply@taskflow'
+
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1  # Set the confirmation link expiration time in days

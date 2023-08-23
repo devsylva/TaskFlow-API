@@ -48,7 +48,7 @@ def signUp(request):
         
         data = {
             "status": "success",
-            "message": "Request Successful",
+            "message": "registration successful",
             "data": serializer.data
         }
         return Response(data, status=status.HTTP_201_CREATED)
@@ -58,8 +58,8 @@ class ConfirmEmailView(APIView):
 
     queryset = get_user_model().objects.all()
     serializer_class = ConfirmEmailSerializer
-    permission_classes = []
-
+    permission_classes = [AllowAny]
+    
     def get(self, request, uidb64, token):
         try:
             uid = smart_str(urlsafe_base64_decode(uidb64))
@@ -67,6 +67,7 @@ class ConfirmEmailView(APIView):
         except (TypeError, ValueError, OverflowError, get_user_model().DoesNotExist):
             return Response({"error": "Invalid user ID"}, status=400)
 
+        print(default_token_generator.check_token(user, token), user, token)
         if default_token_generator.check_token(user, token):
             user.is_active = True
             user.is_verified = True

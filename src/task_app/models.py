@@ -5,6 +5,7 @@ import uuid
 # Create your models here.
 
 class Category(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
 
     def __str__(self):
@@ -16,6 +17,7 @@ class Category(models.Model):
 
 
 class Tag(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
 
     def __str__(self):
