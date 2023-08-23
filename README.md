@@ -1,7 +1,6 @@
 
 # API DOCUMENTATION
 ![download](https://github.com/devsylva/TaskFlow-API/assets/67736638/08e112b2-6fb4-4f54-9d05-e9c003ebd5b7)
-[Postman Collection](https://www.postman.com/universal-firefly-869928/workspace/taskflow-api)
 
 Welcome to the documentation for Dispatch Hub! This guide provides developers with the necessary information to interact with our API and integrate it into their applications.
 
@@ -90,3 +89,25 @@ python manage.py test
 ```
 python manage.py test <app_name>.tests.<test_file>
 ```
+
+# Authentication 
+Authentication is required for most endpoints in the API. To authenticate, include an access token in the `Authorization` header of your request. The access token can be obtained by logging in to your account or registering a new account.
+
+# API Authentication Endpoints 
+The following endpoints are available in the API:
+
+-   `api/user/signup/` (POST): to allow users register an account.
+-   `api/user/login/` (POST): to allow users to log in into their account.
+-   `api/user/login/refresh/` (POST): to allow user refresh to get their access token after it expires.
+-   `api/user/confirm-email/<uidb64>/<token>/` (GET): to allow users confirm their email address.
+-   `api/user/logout/` (POST): to allow users to log out of their account.
+-   `api/user/change_password/` (POST): to allow users change there account password.
+
+# API Task Operations Endpoints
+The following endpoints are available in the API:
+
+- `api/task/task_view/` (POST): allow users create tasks.
+- `api/task/task_view/` (GET): getting all task owned by the logged in user in order or priority and deadline if provided.
+- `api/task/task_detail/` (GET): getting a single task.
+- `api/task/task_detail/` (PUT): updating a task.
+- `api/task/task_detail/` (DELETE): deleting a task.
