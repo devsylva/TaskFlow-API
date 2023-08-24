@@ -124,14 +124,6 @@ The following endpoints are available in the API:
 
 
 # Limitations
-
-
-# Contributing
-
-Contributions to this project are welcome! Go through our [GUIDELINES](https://github.com/devsylva/TaskFlow-API/blob/main/CONTRIBUTING.md)
-
-
-# License
 ### 1. Celery Redis Tasks and Testing Environment
 
 TaskFlow utilizes Celery for background task processing. However, running Celery tasks with a Redis broker requires specific configuration, including a dedicated environment with Redis server installed. Users who wish to leverage Celery tasks need to set up this environment, which might not be feasible in all development or testing setups.
@@ -160,5 +152,10 @@ TaskFlow heavily relies on internet connectivity for real-time synchronization a
 
 TaskFlow offers robust task management capabilities, but it's important to understand its limitations to make informed decisions about its usage. Users should consider the app's compatibility with their specific environment and requirements before adopting it for their task management needs.
 
+# Contributing
 
+Contributions to this project are welcome! Go through our [GUIDELINES](https://github.com/devsylva/TaskFlow-API/blob/main/CONTRIBUTING.md)
+
+
+# License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
