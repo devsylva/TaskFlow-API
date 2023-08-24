@@ -54,6 +54,8 @@ Prioritize the security and privacy of user data, implementing proper authentica
 - [x] Backup and Sync:
 Implement data backup and synchronization features to prevent data loss and ensure tasks are accessible from multiple devices.
 
+# ER-Diagram
+
 
 # Getting Started
 To run the API locally, follow these steps:
