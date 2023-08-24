@@ -55,6 +55,7 @@ Prioritize the security and privacy of user data, implementing proper authentica
 Implement data backup and synchronization features to prevent data loss and ensure tasks are accessible from multiple devices.
 
 # ER-Diagram
+![TaskFlow](https://github.com/devsylva/TaskFlow-API/assets/67736638/24805d00-68b8-47ab-8da8-3023583e4643)
 
 
 # Getting Started
