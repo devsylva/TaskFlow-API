@@ -132,5 +132,33 @@ Contributions to this project are welcome! Go through our [GUIDELINES](https://g
 
 
 # License
+### 1. Celery Redis Tasks and Testing Environment
+
+TaskFlow utilizes Celery for background task processing. However, running Celery tasks with a Redis broker requires specific configuration, including a dedicated environment with Redis server installed. Users who wish to leverage Celery tasks need to set up this environment, which might not be feasible in all development or testing setups.
+
+### 2. Windows Compatibility
+
+TaskFlow's development and testing have primarily been focused on Unix-like operating systems such as Linux and macOS. While efforts have been made to support Windows environments, there might be differences in behavior due to environment-specific factors that Windows does not provide. Users using Windows are advised to thoroughly test the app's functionality to ensure optimal performance.
+
+### 3. External Dependencies
+
+TaskFlow relies on various external dependencies, such as third-party libraries and services (e.g., Amazon S3 for backups). The availability and reliability of these external dependencies might affect certain features of the app. Users should be cautious of potential service disruptions or compatibility issues with these dependencies.
+
+### 4. Scalability Considerations
+
+While TaskFlow is designed to be scalable, the performance of the app might vary based on factors such as the size of the user base, task complexity, and the underlying hardware and infrastructure. Large-scale deployments should be carefully planned and optimized to ensure efficient task management and responsiveness.
+
+### 5. Data Security
+
+TaskFlow implements security measures to protect user data. However, it's essential for users to handle sensitive information with care. The app might not account for all possible security scenarios, and users should take additional measures if dealing with highly sensitive data.
+
+### 6. Limited Offline Functionality
+
+TaskFlow heavily relies on internet connectivity for real-time synchronization and collaboration features. Offline functionality is limited, and users should ensure a stable internet connection to fully utilize the app's capabilities.
+
+## Conclusion
+
+TaskFlow offers robust task management capabilities, but it's important to understand its limitations to make informed decisions about its usage. Users should consider the app's compatibility with their specific environment and requirements before adopting it for their task management needs.
+
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
