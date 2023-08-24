@@ -123,6 +123,8 @@ The following endpoints are available in the API:
 - `api/task/category_detail/` (DELETE): deleting a category.
 
 
+# Limitations
+
 
 # Contributing
 

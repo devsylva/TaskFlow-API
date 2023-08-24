@@ -1,0 +1,67 @@
+[
+  {
+    "model": "task_app.category",
+    "pk": 1,
+    "fields": {
+      "user": "00d0b05c-7977-4ba5-a901-6800523d0852",
+      "name": "reading"
+    }
+  },
+  {
+    "model": "task_app.category",
+    "pk": 2,
+    "fields": { "user": "00d0b05c-7977-4ba5-a901-6800523d0852", "name": "play" }
+  },
+  {
+    "model": "task_app.task",
+    "pk": "5e410cd8-d38f-4da0-93ef-674f91b06475",
+    "fields": {
+      "user": "00d0b05c-7977-4ba5-a901-6800523d0852",
+      "title": "Learn Golang",
+      "description": "Read and study Golang",
+      "priority": 2,
+      "status": "To Do",
+      "deadline": "2023-08-31T00:37:47Z",
+      "category": 1,
+      "created_at": "2023-08-24T00:38:03.251Z",
+      "updated_at": "2023-08-24T00:38:03.251Z",
+      "tags": []
+    }
+  },
+  {
+    "model": "task_app.task",
+    "pk": "d48d70a4-4a8f-4957-a81f-5ef586ec7156",
+    "fields": {
+      "user": "00d0b05c-7977-4ba5-a901-6800523d0852",
+      "title": "Read javascript",
+      "description": "Read and study Javascript",
+      "priority": 2,
+      "status": "To Do",
+      "deadline": "2023-08-30T00:38:25Z",
+      "category": 2,
+      "created_at": "2023-08-24T00:38:41.416Z",
+      "updated_at": "2023-08-24T00:38:41.416Z",
+      "tags": []
+    }
+  },
+  {
+    "model": "task_app.reminder",
+    "pk": 1,
+    "fields": {
+      "user": "00d0b05c-7977-4ba5-a901-6800523d0852",
+      "task": "5e410cd8-d38f-4da0-93ef-674f91b06475",
+      "reminder_time": "2023-08-31T00:17:47Z",
+      "notified": false
+    }
+  },
+  {
+    "model": "task_app.reminder",
+    "pk": 2,
+    "fields": {
+      "user": "00d0b05c-7977-4ba5-a901-6800523d0852",
+      "task": "d48d70a4-4a8f-4957-a81f-5ef586ec7156",
+      "reminder_time": "2023-08-30T00:18:25Z",
+      "notified": false
+    }
+  }
+]

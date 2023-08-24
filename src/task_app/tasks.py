@@ -4,6 +4,7 @@ from datetime import timedelta
 from django.core.mail import send_mail
 from celery.utils.log import get_task_logger
 from celery import shared_task
+import subprocess
 
 
 logger = get_task_logger(__name__)
@@ -26,3 +27,8 @@ def send_task_reminder():
         
         reminder.notified = True
         reminder.save()
+
+
+@shared_task
+def run_backup_script():
+    subprocess.run(["python", "backup_script.py"])
