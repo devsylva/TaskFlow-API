@@ -126,7 +126,7 @@ The following endpoints are available in the API:
 
 # Contributing
 
-Contributions to this project are welcome! Go through our [GUIDELINES]()
+Contributions to this project are welcome! Go through our [GUIDELINES](https://github.com/devsylva/TaskFlow-API/blob/main/CONTRIBUTING.md)
 
 
 # License
