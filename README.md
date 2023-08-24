@@ -51,7 +51,7 @@ Ensure the application is accessible from mobile devices, allowing users to mana
 - Data Security and Privacy:
 Prioritize the security and privacy of user data, implementing proper authentication, encryption, and access controls.
 
-- Backup and Sync:
+- [x] Backup and Sync:
 Implement data backup and synchronization features to prevent data loss and ensure tasks are accessible from multiple devices.
 
 
