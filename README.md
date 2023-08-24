@@ -21,10 +21,10 @@ The ultimate goal of a task management application is to empower users to manage
 - [x] Task Creation and Organization:
 Allow users to create tasks easily and organize them based on different parameters such as due dates, priority, categories, and projects. 
 
-- Task Tracking and Status Updates:
+- [x] Task Tracking and Status Updates:
 Enable users to track the progress of their tasks, update task statuses (e.g., to-do, in progress, completed), and get a clear overview of tasks that need attention.
 
-- Deadline Management:
+- [x] Deadline Management:
 Help users keep track of task deadlines by providing reminders, notifications, and a clear visualization of upcoming due dates.
 
 - Collaboration and Sharing:
@@ -33,10 +33,10 @@ Facilitate collaboration among teams by allowing users to assign tasks to collea
 - Time Management:
 Provide tools to estimate and track the time required to complete tasks, helping users allocate their time effectively and avoid overloading themselves.
 
-- Prioritization and Sorting:
+- [x] Prioritization and Sorting:
 Allow users to set task priorities and sort tasks based on importance, urgency, or custom criteria, aiding in making informed decisions about task order.
 
-- Customization:
+- [x] Customization:
 Offer flexibility in customizing task categories, labels, tags, and views to match users' preferred workflows and organizational methods.
 
 - Data Visualization and Insights:
@@ -111,3 +111,24 @@ The following endpoints are available in the API:
 - `api/task/task_detail/` (GET): getting a single task.
 - `api/task/task_detail/` (PUT): updating a task.
 - `api/task/task_detail/` (DELETE): deleting a task.
+- `api/task/tag_view/` (POST): allow users create tag.
+- `api/task/tag_view/` (GET): getting all tags owned by the logged in user.
+- `api/task/tag_detail/` (GET): getting a single tag.
+- `api/task/tag_detail/` (PUT): updating a tag.
+- `api/task/tag_detail/` (DELETE): deleting a tag.
+- `api/task/category_view/` (POST): allow users create category.
+- `api/task/category_view/` (GET): getting all category owned by the logged in user.
+- `api/task/category_detail/` (GET): getting a single category.
+- `api/task/category_detail/` (PUT): updating a category.
+- `api/task/category_detail/` (DELETE): deleting a category.
+
+
+
+# Contributing
+
+Contributions to this project are welcome! Go through our [GUIDELINES]()
+
+
+# License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

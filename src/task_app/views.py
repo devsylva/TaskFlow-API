@@ -18,6 +18,19 @@ class TaskView(APIView):
     list all task or create a new task
     """
     def get(self, request, format=None):
+        if "category" in request.GET:
+            category = request.GET["category"]
+            categoryid = get_object_or_404(Category, name=category).id
+            tasks = get_list_or_404(Task, user=request.user, category=categoryid)
+            serializer = TaskSerializer(tasks, many=True)
+            return Response(serializer.data)
+        elif "tag" in request.GET:
+            tag = request.GET["tag"]
+            tagid = get_object_or_404(Tag, user=request.user, name=tag).id
+            tags = get_list_or_404(Task, user=request.user, tag=tagid)
+            serializer = TagSerializer(tags, many=True)
+            return Response(serializer.data)
+
         tasks = Task.objects.filter(user=request.user).order_by('priority', 'deadline')
         serializer = TaskSerializer(tasks, many=True)
         return Response(serializer.data)
@@ -82,6 +95,49 @@ class TagView(APIView):
 
 
 class TagDetail(APIView):
+    permission_classes = [IsAuthenticated]
+    """
+    Retrieve, update or delete a snippet instance.
+    """
+    def get_object(self, pk):
+        try:
+            return Tag.objects.get(pk=pk)
+        except Tag.DoesNotExist:
+            raise Http404
+
+    def get(self, request, pk, format=None):
+        tag = self.get_object(pk)
+        serializer = TagSerializer(tag)
+        return Response(serializer.data)
+
+    def put(self, request, pk, format=None):
+        tag = self.get_object(pk)
+        serializer = TagSerializer(tag, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class CategoryView(APIView):
+    permission_classes = [IsAuthenticated]
+    """
+    list all task or create a new task
+    """
+    def get(self, request, format=None):
+        tags = Tag.objects.filter(user=request.user)
+        serializer = TagSerializer(tags, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = TagSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()   
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class CategoryDetail(APIView):
     permission_classes = [IsAuthenticated]
     """
     Retrieve, update or delete a snippet instance.

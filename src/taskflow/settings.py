@@ -33,7 +33,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # third party apps
     "rest_framework",
     "rest_framework_simplejwt",
+    "corsheaders",
 ]
 
 
@@ -147,11 +148,18 @@ SIMPLE_JWT = {
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = 'Africa/Lagos'
 
 USE_I18N = True
 
 USE_TZ = True
+
+
+# celery settings
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Use the correct Redis URL
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'  # Use the correct Redis URL for results
+
 
 
 # Static files (CSS, JavaScript, Images)

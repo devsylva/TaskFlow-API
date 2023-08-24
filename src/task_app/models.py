@@ -5,7 +5,7 @@ import uuid
 # Create your models here.
 
 class Category(models.Model):
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=50)
 
     def __str__(self):
@@ -17,7 +17,7 @@ class Category(models.Model):
 
 
 class Tag(models.Model):
-    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=50)
 
     def __str__(self):
@@ -51,3 +51,13 @@ class Task(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Reminder(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    reminder_time = models.DateTimeField(null=True, blank=True)
+    notified = models.BooleanField(default=False)
+
+    def __str__(self) -> str:
+        return f"{self.user.first_name}'s reminder"
