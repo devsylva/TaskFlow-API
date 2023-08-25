@@ -64,26 +64,33 @@ Implement data backup and synchronization features to prevent data loss and ensu
 To run the API locally, follow these steps:
 
 1. Clone the repository: 
+
 ```git clone https://github.com/devsylva/TaskFlow-API.git```
 
 2. Create a virtual environment inside the project directory: 
+
 ```python -m venv venv```
 
 3. Activate the virtual environment: 
+
 ```source venv/bin/activate```
 
 4. Install dependecies: 
+
 ```pip install -r requirements.txt```
 
 5. Change `.env.templates` in the src/taskflow direct to `.env` and setup your environment variables
 
 6. Setup the database: 
+
 ```python manage.py migrate```
 
 7. Create a superuser account: 
+
 ```python manage.py createsuperuser```
 
 8. Start the development server: 
+
 ```python manage.py runserver```
 
 
