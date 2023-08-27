@@ -66,7 +66,7 @@ class ConfirmEmailView(APIView):
     
     def get(self, request, uidb64, token):
         try:
-            uid = smart_str(urlsafe_base64_decode(uidb64))
+            uid = urlsafe_base64_decode(uidb64).decode()
             user = get_user_model().objects.get(pk=uid)
         except (TypeError, ValueError, OverflowError, get_user_model().DoesNotExist):
             return Response({"error": "Invalid user ID"}, status=400)
