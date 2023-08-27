@@ -13,7 +13,7 @@ from django.http import Http404
 
 # Create your views here.
 class TaskView(APIView):
-    permission_classes = [IsTaskOwner, IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     """
     list all task or create a new task
     """
@@ -27,8 +27,18 @@ class TaskView(APIView):
         elif "tag" in request.GET:
             tag = request.GET["tag"]
             tagid = get_object_or_404(Tag, user=request.user, name=tag).id
-            tags = get_list_or_404(Task, user=request.user, tag=tagid)
-            serializer = TagSerializer(tags, many=True)
+            tasks = get_list_or_404(Task, user=request.user, tag=tagid)
+            serializer = TaskSerializer(tasks, many=True)
+            return Response(serializer.data)
+        elif "status" in request.GET:
+            status = request.GET["status"]
+            tasks = get_list_or_404(Task, user=request.user, status=status)
+            serializer = TaskSerializer(tasks, many=True)
+            return Response(serializer.data)
+        elif "priority" in request.GET:
+            priority = request.GET["priority"]
+            tasks = get_list_or_404(Task, user=request.user, priority=int(priority))
+            serializer = TaskSerializer(tasks, many=True)
             return Response(serializer.data)
 
         tasks = Task.objects.filter(user=request.user).order_by('priority', 'deadline')

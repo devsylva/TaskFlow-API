@@ -44,7 +44,11 @@ def signUp(request):
             user.is_active = False
             user.save()
         else:
-            return Response(serializer.errors, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response({
+                "status": "500",
+                "message": "invalid data provided",
+                "data":serializer.errors
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
         data = {
             "status": "success",
